@@ -1,20 +1,29 @@
 require 'net/http'
 require 'json'
 require 'uri'
+# require 'optparse'
+require_relative 'Search'
 
-puts "Enter a word:"
-word = gets
+=begin
+options = {}
 
-url_data = URI("https://api.urbandictionary.com/v0/define?term=" + word)
-response = Net::HTTP.get(url_data)
-data = JSON.parse(response)
-datas = data["list"].first
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: urban-cli [word] [options]"
 
-puts "Word: #{datas['word']}"
-puts ""
-puts "Definition: #{datas['definition']}"
+  opts.on("-o", "--option OPTION", "Option to use (ex: random)") do |opt|
+    options[:option] = opt
+  end
+  opts.on("-h", "--help", "Help message") do
+    puts opts
+    exit
+  end
+end
+parser.parse!
+=end
 
+search("Shoebill")
 
+# test function for some reason
 
 def main
   puts "testing, wip".reverse
@@ -23,4 +32,3 @@ end
 
 # 3.times do main() end
 
-# Work in progress!
