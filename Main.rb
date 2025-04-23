@@ -1,34 +1,45 @@
+# encoding: UTF-8
+
 require 'net/http'
 require 'json'
 require 'uri'
-# require 'optparse'
 require_relative 'Search'
+require_relative 'Random'
 
-=begin
+require 'optparse'
+
 options = {}
 
 parser = OptionParser.new do |opts|
-  opts.banner = "Usage: urban-cli [word] [options]"
-
-  opts.on("-o", "--option OPTION", "Option to use (ex: random)") do |opt|
+  opts.banner = "USAGE: urban-cli [word] or urban-cli [flag] [option]"
+  
+  opts.on("-o", "--option OPTION", "Option to use (example: random)") do |opt|
     options[:option] = opt
   end
+
   opts.on("-h", "--help", "Help message") do
     puts opts
     exit
   end
 end
+
 parser.parse!
-=end
 
-search("Shoebill")
+# The term to search
+search_term = ARGV[0]
 
-# test function for some reason
-
-def main
-  puts "testing, wip".reverse
-  return
+# Execute the function from Random.rb 
+if options[:option] == "random"
+  random()
+  # The function from Search.rb
+elsif search_term
+  search(search_term)
+  # If someone messes up while writing
+else
+  puts "Please enter a word or an option."
+  puts parser
 end
 
-# 3.times do main() end
 
+#word = gets
+#search(word)
