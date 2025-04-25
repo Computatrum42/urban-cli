@@ -2,13 +2,13 @@
 A cli program that uses Urban Dictionary API to output a dictionary search or some other functions like a random entry.
 
 ## Installation
-```git clone https://github.com/Computatrum42/urban-cli```
-```cd urban-cli/```
-```sudo make install```
+``git clone https://github.com/Computatrum42/urban-cli``
+``cd urban-cli/``
+``sudo make install``
 
 ## For uninstallation:
-```cd urban-cli/```
-```sudo make uninstall```
+``cd urban-cli/``
+``sudo make uninstall``
 
 ## OS Support
 I dunno, it works with my Arch Linux machine. /j
