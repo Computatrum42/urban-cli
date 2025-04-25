@@ -2,16 +2,21 @@
 A cli program that uses Urban Dictionary API to output a dictionary search or some other functions like a random entry.
 
 ## Installation
-idk it works on my arch linux machine /j
+```git clone https://github.com/Computatrum42/urban-cli```
+```cd urban-cli/```
+```sudo make install```
 
-OS Support: Pretty much any Unix-like/Unix-based operating system with a proper Ruby support.
+## For uninstallation:
+```cd urban-cli/```
+```sudo make uninstall```
 
-By the way, I couldn't upload any repository yet.
-And probably I won't do this, I could ask my friend to do these extra stuff.
-
-### Required packages
-- ruby (no shit sherlock)
-- make (actually there is no makefile yet but just wait)
+## OS Support
+I dunno, it works with my Arch Linux machine. /j
+Pretty much any Unix-like/Unix-based operating system with a proper Ruby support. But for some reason, it does not work with Windows.
+ 
+## Required packages
+- ruby
+- make
 
 ## Usage
 ```urban-cli [word]``` or ```urban-cli [flag] [option]```
@@ -21,10 +26,8 @@ for example:
 
 
 ## Known issues
-Non-ASCII characters couldn't used for searching. It happens because the URI library only accepts the ASCII characters.
+Non-ASCII characters couldn't used for searching. It happens because the URI library only accepts the ASCII characters. Which makes sense because URL's uses ASCII characters, but its possible to see a non-ASCII character in an URL, not in a domain though.
 
 ## Todo list
-- Flag system (completed)
-- Random option (completed along with flag system)
 - Non-ASCII character issue (It has a slim chance to get resolved but I'll try.)
- 
+- Add to repositories like AUR (i dunno)
