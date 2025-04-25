@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#!/usr/bin/env ruby
 
 require 'net/http'
 require 'json'
