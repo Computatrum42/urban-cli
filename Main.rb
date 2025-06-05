@@ -3,10 +3,9 @@
 require 'net/http'
 require 'json'
 require 'uri'
-require_relative 'Search'
-require_relative 'Random'
-
 require 'optparse'
+
+require_relative 'Funcs'
 
 options = {}
 
@@ -25,21 +24,17 @@ end
 
 parser.parse!
 
-# The term to search
+# Detecting the search term
 search_term = ARGV[0]
 
 # Execute the function from Random.rb 
 if options[:option] == "random"
-  random()
+  fetch("https://api.urbandictionary.com/v0/random")
   # The function from Search.rb
 elsif search_term
-  search(search_term)
-  # If someone messes up while writing
+  fetch("https://api.urbandictionary.com/v0/define?term=" + search_term)
+  # If you mess up the command
 else
   puts "Please enter a word or an option."
   puts parser
 end
-
-
-#word = gets
-#search(word)
